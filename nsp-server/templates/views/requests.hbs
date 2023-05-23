@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/app.js"></script>
+    </head>
+<body>
+    <div>
+    {{>header}}
+    <p>{{text}}</p>
+    <p>{{modelTable}}</p>
+    <table>
+      <tr>
+    <th>symulator</th>
+    <th>modelName</th>
+    <th>simSuffix</th>
+    <th>simDesc</th>
+    <th>simTimeStepInSec</th>
+    <th>simTime</th>
+    <th>columnDepth</th>
+    <th>synapticProbability</th>
+    <th>retY</th>
+    <th>retY</th>
+    <th>parallelMode</th>
+    <th>numNodes</th>
+    <th>modelInput</th>
+  </tr>
+    {{#each requests as |req|}}
+     <tr> {{#> childEntry}}
+      <td>{{req.symulator}}</td>
+      <td>{{req.modelName}}</td>
+      <td>{{req.simSuffix}}</td>
+      <td>{{req.simDesc}}</td>
+      <td>{{req.simTimeStepInSec}}</td>
+      <td>{{req.simTime}}</td>
+      <td>{{req.columnDepth}}</td>
+      <td>{{req.synapticProbability }}</td>
+      <td>{{req.retX}}</td>
+      <td>{{req.retY }}</td>
+      <td>{{req.parallelMode}}</td>
+      <td>{{req.numNodes}}</td>
+      <td>{{req.modelInput}}</td>
+      {{/childEntry}}
+      </tr>
+    {{/each}}
+
+    </table>
+    </div>
+    {{>footer}}
+
+</body>
+</html>

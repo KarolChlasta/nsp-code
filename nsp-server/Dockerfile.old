@@ -1,0 +1,59 @@
+FROM ubuntu:18.04
+LABEL maintainer="karol@chlasta.pl"
+#COPY . /genesis
+#WORKDIR /genesis
+ENTRYPOINT ["/bin/bash"]
+SHELL ["/bin/bash", "-c"]
+COPY . /usr/local/nsp
+RUN ls -ltr 
+RUN mv /usr/local/nsp/genesis-2.4 /usr/local/genesis-2.4
+RUN ls -ltr /usr/local/nsp
+RUN ls -ltr /usr/local/genesis-2.4
+WORKDIR "/usr/local"
+#RUN apt --yes install --assume-yes awscli
+#RUN  export PATH=$PATH:/usr/bin/curl
+WORKDIR "/usr/local/genesis-2.4/genesis/src"
+RUN pwd
+RUN apt update
+RUN apt-get --yes install apt-utils
+RUN apt-get --yes install vim
+RUN apt install make
+RUN apt --yes install gcc
+RUN apt --yes install bison flex libncurses5-dev libxt-dev
+RUN ./configure --prefix=/usr/local/genesis-2.4/genesis
+RUN make nxgenesis >& nxmake.out
+RUN make nxinstall >& nxinstall.out
+RUN make nxinstall
+WORKDIR "/root"
+RUN export PATH=$PATH:/usr/local/genesis-2.4/genesis:/usr/local/genesis-2.4/pgenesis/bin:/usr/local/nsp/scripts
+RUN cp /usr/local/genesis-2.4/genesis/startup/.simrc .
+RUN echo 'export PATH=$PATH:/usr/local/genesis-2.4/genesis:/usr/local/genesis-2.4/pgenesis/bin:/usr/local/nsp/scripts' >> .bashrc
+RUN apt-get --yes install curl
+RUN apt-get --yes install unzip
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN ./aws/install
+#PGENESIS
+WORKDIR "/usr/local/genesis-2.4/pgenesis"
+RUN cp /usr/local/nsp/nsp/Makefile /usr/local/genesis-2.4/pgenesis/Makefile
+RUN apt-get --yes install csh g++ libxt-dev libxt6 libxtst6 libxtst-dev libxmu-dev
+RUN apt-get --yes install mpich
+RUN export LD_LIBRARY_PATH=/usr/lib/mpich/lib
+#RUN ./configure --prefix=/usr/local/genesis-2.4/pgenesis
+RUN make clean > make.out
+RUN make nxinstall >& nxinstall.out
+RUN cp /usr/local/genesis-2.4/pgenesis/startup/.nxpsimrc ~/
+#RUN apt install build-essential
+#RUN cat /config.log
+#EXPOSE 5000
+WORKDIR "/usr/local/genesis-2.4/"
+# server installation
+# RUN apt-get --yes install python3.7
+# RUN apt-get --yes install python3-pip
+# RUN pip3 install aiofiles
+# RUN pip3 install jinja2
+# RUN pip3 install starlette
+# RUN pip3 install uvicorn
+# RUN export LC_ALL=C.UTF-8
+# RUN export LANG=C.UTF-8
+# RUN uvicorn example:app --reload

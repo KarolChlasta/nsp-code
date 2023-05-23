@@ -1,0 +1,4 @@
+runSim.sh --simulator genesis --modelName RetNet40 --simSuffix First-Local-e1  --simDesc RetNet40 --simTimeStepInSec 0.00005 --simTime 1 --columnDepth 25 --synapticProbability 0.1 --retX 5 --retY 8 --parallelMode 0 --numNodes 1 --modelInput 0;
+runSim.sh --simulator genesis --modelName RetNet40 --simSuffix First-Local-e2  --simDesc RetNet40 --simTimeStepInSec 0.00005 --simTime 1 --columnDepth 25 --synapticProbability 0.1 --retX 5 --retY 8 --parallelMode 0 --numNodes 1 --modelInput A;
+runSim.sh --simulator genesis --modelName RetNet40 --simSuffix First-Local-e3  --simDesc RetNet40 --simTimeStepInSec 0.00005 --simTime 1 --columnDepth 25 --synapticProbability 0.1 --retX 5 --retY 8 --parallelMode 0 --numNodes 1 --modelInput 1;
+runSim.sh --simulator pgenesis --modelName 2neurons --simSuffix First-Local-e4 --simDesc 2neurons --simTimeStepInSec 0.00005 --simTime 1 --parallelMode 1 --numNodes 3;

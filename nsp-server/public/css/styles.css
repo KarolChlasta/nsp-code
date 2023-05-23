@@ -1,0 +1,28 @@
+body {
+    color: #333333;
+    font-family: Arial;
+    padding: 0 16px;
+
+}
+
+footer{
+    padding: 16px;
+    margin: 16px;
+}
+
+header a {
+    text-decoration: none;
+    margin-right: 16px;
+}
+h1 {
+    color: gray;
+    font-size: 64px;
+}
+
+img {
+    width:250px
+}
+
+table, th, td {
+    border: 1px solid;
+  }

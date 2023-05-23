@@ -1,0 +1,1 @@
+runSim.sh --simulator pgenesis --modelName 2neurons --simSuffix Docker-small-test --simDesc 2neurons --simTimeStepInSec 0.00005 --simTime 1 --columnDepth 3 --synapticProbability 0.1 --retX 5 --retY 8 --parallelMode 1 --numNodes 3 --modelInput A

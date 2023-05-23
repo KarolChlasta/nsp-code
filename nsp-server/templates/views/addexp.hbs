@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        {{>header}}
+        <p>{{text}}</p>
+
+        <form  action="/" method="post" id="addExpForm" name="addExpForm">
+            <input id="symulator" name="symulator" type="text" placeholder="symulator" value="genesis"/> 
+            <input id="modelName" name="modelName" type="text" placeholder="modelName"/> 
+            <input id="simSuffix" name="simSuffix" placeholder="simSuffix"/> 
+            <input id="simDesc" name="simDesc" placeholder="simDesc"/> 
+            <input id="simTimeStepInSec" name="simTimeStepInSec" placeholder="simTimeStepInSec"/> 
+            <input id="simTime" name="simTime" placeholder="simTime"/> 
+            <input id="columnDepth" name="columnDepth" placeholder="columnDepth"/> 
+            <input id="synapticProbability" name="synapticProbability" placeholder="synapticProbability"/> 
+            <input id="retX" name="retX" placeholder="retX"/> 
+            <input id="retY" name="retY" placeholder="retY"/> 
+            <input id="parallelMode" name="parallelMode" placeholder="parallelMode"/> 
+            <input id="numNodes" name="numNodes" placeholder="numNodes"/> 
+            <input id="modelInput" name="modelInput" placeholder="modelInput"/> 
+            <button>Add experiments</button>
+
+        </form>
+
+
+            <table>
+      <tr>
+    <th>symulator</th>
+    <th>model Name</th>
+    <th>experiment Suffix</th>
+    <th>experiment Desc</th>
+    <th>simulation Time Step In Sec</th>
+    <th>simulation Time</th>
+    <th>column Depth</th>
+    <th>synaptic Probability</th>
+    <th>retX</th>
+    <th>retY</th>
+    <th>parallel Mode</th>
+    <th>numNodes</th>
+    <th>model Input</th>
+  </tr>
+    {{#each requests as |req|}}
+     <tr> {{#> childEntry}}
+      <td>{{req.symulator}}</td>
+      <td>{{req.modelName}}</td>
+      <td>{{req.simSuffix}}</td>
+      <td>{{req.simDesc}}</td>
+      <td>{{req.simTimeStepInSec}}</td>
+      <td>{{req.simTime}}</td>
+      <td>{{req.columnDepth}}</td>
+      <td>{{req.synapticProbability }}</td>
+      <td>{{req.retX}}</td>
+      <td>{{req.retY }}</td>
+      <td>{{req.parallelMode}}</td>
+      <td>{{req.numNodes}}</td>
+      <td>{{req.modelInput}}</td>
+      {{/childEntry}}
+      </tr>
+    {{/each}}
+
+    </table>
+
+   <!--     <a href="./runAddExp"> run  experiment</a>
+        <a href="./runLs">ls</a>
+        <a href="./runPwd">pwd</a>
+        <a href="./runIpconfig">ipconfig</a>-->
+
+        {{>footer}}
+    <script src="/js/app.js"></script>    
+    </body>
+    
+</html>
+
+ 
+    

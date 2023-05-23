@@ -1,0 +1,6 @@
+.terraform
+*.hcl
+*.tfstate
+*.backup
+/nsp-frontend/node_modules/*
+/nsp-server/node_modules/*

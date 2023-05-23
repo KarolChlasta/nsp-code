@@ -1,0 +1,43 @@
+{
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "inferenceAccelerators": [],
+    "containerDefinitions": [
+        {
+            "name": "nsp-ecs-name",
+            "image": "public.ecr.aws/docker/library/ubuntu:18.04",
+            "interactive": true,
+            "pseudoTerminal": true,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/nsp-ecs-fargate-task",
+                    "awslogs-region": "eu-west-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": [
+                    {
+                        "name": "",
+                        "valueFrom": ""
+                    }
+                ]
+            }
+        }
+    ],
+    "volumes": [],
+    "networkMode": "host",
+    "memory": "512",
+    "cpu": "256",
+    "placementConstraints": [],
+    "family": "nsp-ecs-host-task",
+    "runtimePlatform": {
+        "operatingSystemFamily": "LINUX"
+    },
+    "tags": [
+        {
+            "key": "project",
+            "value": "NSP"
+        }
+    ]
+}

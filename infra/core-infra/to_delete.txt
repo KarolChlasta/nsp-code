@@ -1,0 +1,42 @@
+ecs_cluster_id = "arn:aws:ecs:eu-west-1:333149208801:cluster/ecs-nsp-infra"
+ecs_cluster_name = "ecs-nsp-infra"
+ecs_task_execution_role_arn = "arn:aws:iam::333149208801:role/ecs-nsp-infra-execution"
+ecs_task_execution_role_name = "ecs-nsp-infra-execution"
+private_subnets = [
+  "subnet-09005d0f1400bc773",
+  "subnet-0ed1ccb1260daebca",
+  "subnet-07e6383f07a187644",
+]
+private_subnets_cidr_blocks = tolist([
+  "10.0.10.0/24",
+  "10.0.11.0/24",
+  "10.0.12.0/24",
+])
+public_subnets = [
+  "subnet-00b1bbd6ee5f97a54",
+  "subnet-065e8cf25cd94232f",
+  "subnet-017d275815efabc82",
+]
+sd_namespaces = {
+  "default" = {
+    "arn" = "arn:aws:servicediscovery:eu-west-1:333149208801:namespace/ns-il454zthq5yzmygu"
+    "description" = "service discovery namespace.clustername.local"
+    "hosted_zone" = "Z02313781BVH3CB7VLWMC"
+    "id" = "ns-il454zthq5yzmygu"
+    "name" = "default.ecs-nsp-infra.local"
+    "tags" = tomap(null) /* of string */
+    "tags_all" = tomap({})
+    "vpc" = "vpc-05f44a5d9a6b5848f"
+  }
+  "myapp" = {
+    "arn" = "arn:aws:servicediscovery:eu-west-1:333149208801:namespace/ns-v3ye5gsh7initoxj"
+    "description" = "service discovery namespace.clustername.local"
+    "hosted_zone" = "Z02293791IPX72926VPG5"
+    "id" = "ns-v3ye5gsh7initoxj"
+    "name" = "myapp.ecs-nsp-infra.local"
+    "tags" = tomap(null) /* of string */
+    "tags_all" = tomap({})
+    "vpc" = "vpc-05f44a5d9a6b5848f"
+  }
+}
+vpc_id = "vpc-05f44a5d9a6b5848f"

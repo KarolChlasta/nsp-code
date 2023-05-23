@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/app.js"></script>
+    </head>
+<body>
+    <div>
+    {{>header}}
+    <p>{{modelTable}}</p>
+    <a href="./runlistModels">list models</a>
+    <ul class="models_list">
+  {{#each models}}
+    <li>{{this}}</li>
+  {{/each}}
+</ul>
+    </div>
+    {{>footer}}
+
+</body>
+</html>

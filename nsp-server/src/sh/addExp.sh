@@ -1,0 +1,1 @@
+ /usr/local/nsp-server/src/sh/runS3Mod.sh 2neurons test '2neurons' 0.000006 1 3 &

@@ -1,0 +1,17 @@
+{
+  "name": "nsp-server",
+  "version": "1.0.0",
+  "description": "opis servera",
+  "main": "index.js",
+  "repository":"https://github.com/KarolChlasta/nsp-code.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/js/index.js"
+  },
+  "author": "psochaczewski@wp.pl",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "hbs": "^4.2.0"
+  }
+}

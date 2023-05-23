@@ -1,0 +1,8 @@
+nsp_aws_access_key_id=XXXXXXXXX
+nsp_aws_secret_access_key=YYYYYYYYY
+nsp_region=eu-west-1
+nsp_debug=0
+nsp_scientist_name=unknown
+nsp_scientist_surname=unknown
+nsp_scientist_email=unknown@unknown.com
+nsp_project_info=unknown

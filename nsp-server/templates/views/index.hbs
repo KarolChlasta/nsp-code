@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/app.js"></script>
+    </head>
+<body>
+    <div>
+    {{>header}}
+    <p>{{indexText}}</p>
+
+<ul class="people_list">
+  {{#each people}}
+    <li>{{this}}</li>
+  {{/each}}
+</ul>
+
+
+<a href="./runPing">ping</a>
+<a href="./runLs">ls</a>
+    </div>
+    {{>footer}}
+
+</body>
+</html>
