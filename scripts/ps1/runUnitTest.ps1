@@ -5,7 +5,7 @@
 )
 
 if ($help) {
-   Write-Output "Usage: ./runUnitTest.sp1 [-c CONTAINER_NAME]"
+   Write-Output "Usage: ./runUnitTest.ps1 [-c CONTAINER_NAME]"
    Write-Output "Show consol output of the latest running container"
    Write-Output " -c, -container  CONTAINER_NAME: specifies the name or ID of the container to be acted upon"
    Write-Output " -h, -help: show this help message."
